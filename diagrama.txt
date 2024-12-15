@@ -1,0 +1,47 @@
+Biblioteca
+----------------------
++ nome: String
++ endereco: String
++ livros: List<Livro>
++ usuarios: List<Usuario>
+----------------------
++ adicionarLivro(Livro): void
++ removerLivro(String): void
++ pesquisarLivro(String): Livro
++ listarLivros(): void
++ adicionarUsuario(Usuario): void
++ removerUsuario(String): void
++ listarUsuarios(): void
+
+Livro
+----------------------
++ titulo: String
++ autor: String
++ numeroPaginas: int
++ preco: float
++ disponivel: boolean
+----------------------
++ emprestar(): boolean
++ devolver(): boolean
+
+Usuario
+----------------------
++ nome: String
++ cpf: String
++ email: String
++ emprestimos: List<Emprestimo>
+----------------------
++ cadastrarUsuario(String, String, String): void
++ removerUsuario(String): void
++ listarEmprestimos(): void
+
+Emprestimo
+----------------------
++ livro: Livro
++ usuario: Usuario
++ dataEmprestimo: LocalDate
++ dataDevolucao: LocalDate
++ status: String
+----------------------
++ registrarEmprestimo(Livro, Usuario): void
++ registrarDevolucao(): void
