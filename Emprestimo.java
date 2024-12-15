@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Emprestimo {
     Livro livro;
@@ -93,7 +94,11 @@ public class Emprestimo {
     }
 
     public String toString(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String dataEmprestimoFormatada = dataEmprestimo.format(formatter);
+        String dataDevolucaoFormatada = (dataDevolucao != null) ? dataDevolucao.format(formatter) : "Não devolvido";
+
         return "Livro: " + livro.getTitulo() + "\nUsuário: " + usuario.getNome() +
-                "\nData de Empréstimo: " + dataEmprestimo + "\nData de Devolução: " + dataDevolucao+ "\n";
+                "\nData de Empréstimo: " + dataEmprestimoFormatada + "\nData de Devolução: " + dataDevolucaoFormatada+ "\n";
     }
 }
