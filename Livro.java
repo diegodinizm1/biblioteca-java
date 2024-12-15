@@ -81,7 +81,7 @@ public class Livro{
     public boolean devolverLivro(Usuario usuario){
         if (!this.emprestado) {
             System.out.println("O livro '" + this.titulo + "' não está emprestado.");
-            return false; // Retorna false se o livro não estiver emprestado
+            return false;
         }
 
         this.emprestado = false;
@@ -93,10 +93,10 @@ public class Livro{
 
     public String toString(){
         return "\nLivro : " + getTitulo() +
-                 "\nID : " + getId() +
-                 "\nAutor : " + getAutor() +
-                 "\nPreço : " + getPreco() +
-                 "\nEmprestado : " + (isEmprestado() ? "Sim" : "Não") +
-                 "\n";
+                "\nID : " + getId() +
+                "\nAutor : " + getAutor() +
+                "\nPreço : " + getPreco() +
+                "\nEmprestado : " + (isEmprestado() ? "Sim" : "Não") +
+                "\n";
     }
 }
