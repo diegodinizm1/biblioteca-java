@@ -72,7 +72,8 @@ public class AbrirBiblioteca {
         System.out.println("\nMenu Emprestimos:\n");
         System.out.println("1 - Cadastrar Emprestimo");
         System.out.println("2 - Excluir Emprestimo");
-        System.out.println("3 - Listar Emprestimos");
+        System.out.println("3 - Pesquisar Emprestimos");
+        System.out.println("4 - Listar Emprestimos");
         System.out.println("0 - Voltar");
 
         int escolha = input.nextInt();
@@ -108,6 +109,10 @@ public class AbrirBiblioteca {
                 System.out.println("Livro não emprestado ou inexistente.\n");
             }
         } else if (escolha == 3) {
+            System.out.println("Qual CPF deseja pesquisar?");
+            String cpf = input.nextLine();
+            usuario.pesquisarEmprestimo(cpf);
+        } else if (escolha == 4) {
             System.out.println("\nListando todos os empréstimos:\n");
             usuario.listarEmprestimos();
         } else {
@@ -119,7 +124,8 @@ public class AbrirBiblioteca {
         System.out.println("\nMenu Usuários:\n");
         System.out.println("1 - Cadastrar Usuário");
         System.out.println("2 - Excluir Usuário");
-        System.out.println("3 - Listar Usuários");
+        System.out.println("3 - Pesquisar Usuário");
+        System.out.println("4 - Listar Usuários");
         System.out.println("0 - Voltar");
 
         int escolha = input.nextInt();
@@ -142,6 +148,10 @@ public class AbrirBiblioteca {
             u.setCpf(cpf);
             biblioteca.removerUsuario(u);
         } else if (escolha == 3) {
+            System.out.println("Digite o CPF que deseja pesquisar:");
+            String cpf = input.nextLine();
+            biblioteca.pesquisarUsuario(cpf);
+        } else if (escolha == 4) {
             biblioteca.listarUsuarios(usuario);
         } else {
             System.out.println("Operação Inválida");
