@@ -18,7 +18,7 @@ public class Usuario {
 
     public void setNome(String nome) {
         if(nome != null){
-        this.nome = nome;
+            this.nome = nome;
         }
     }
 
@@ -44,6 +44,24 @@ public class Usuario {
         } else {
             for(Emprestimo emp : emprestimos) {
                 System.out.println(emp);
+            }
+        }
+    }
+
+    public void pesquisarEmprestimo(String cpf) {
+        if(emprestimos.isEmpty()) {
+            System.out.println("Nenhum empréstimo existente");
+        }else{
+            boolean achou = false;
+            for(Emprestimo emp : emprestimos) {
+                if(emp.getUsuario().getCpf().equals(cpf)) {
+                    achou = true;
+                    System.out.println("\nEmpréstimo encontrado com o CPF informado\n");
+                    System.out.println(emp);
+                }
+            }
+            if (!achou){
+                System.out.println("Nenhum empréstimo encontrado com o CPF informado");
             }
         }
     }
