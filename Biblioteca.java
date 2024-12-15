@@ -56,6 +56,20 @@ public class Biblioteca{
         }
     }
 
+    public  void pesquisarUsuario(String cpf){
+        boolean achou = false;
+        for(Usuario u : usuarios){
+            if(u.getCpf().equals(cpf)){
+                achou = true;
+                System.out.println("\nUsuário encontrado com o CPF informado\n");
+                System.out.println(u);
+            }
+        }
+        if(!achou){
+            System.out.println("Usuário inexistente!");
+        }
+    }
+
     public boolean verificarUsuario(Usuario usuario){
         return usuario.getNome() != null && !usuario.getNome().isEmpty() &&
                 usuario.getCpf() != null && !usuario.getCpf().isEmpty();
